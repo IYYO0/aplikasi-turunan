@@ -1,0 +1,27 @@
+Baca package.json dan struktur src/ yang ada, lalu bangun aplikasi "KalkuLab",
+kalkulator Kalkulus 1. Ikuti aturan di GEMINI.md.
+Vite, React, dan Tailwind sudah terpasang dan berfungsi. Jangan install ulang
+atau ubah konfigurasinya.
+
+TAHAP 1 - Kerangka + modul Turunan:
+1. Install dependensi tambahan: mathjs, nerdamer, katex, react-katex, recharts, vitest.
+2. Buat struktur folder: components, modules, engine, utils.
+3. App.jsx: navbar + tab untuk 5 modul (Limit, Turunan, Integral Substitusi,
+   Integral Tentu, Aplikasi Turunan). Modul selain Turunan cukup placeholder
+   "Segera hadir".
+4. Komponen reusable: MathInput (input teks + tombol cepat x², √, sin, cos, ln, ^),
+   StepCard (kartu langkah, rumus dirender KaTeX), ResultBox, GraphView (recharts).
+5. Modul Turunan:
+   - input f(x) dan x0 (opsional)
+   - engine/derivative.js: hitung f'(x) simbolik dengan mathjs, hasilkan daftar
+     langkah yang menyebut aturan yang dipakai (pangkat, rantai, hasil kali,
+     hasil bagi)
+   - tampilkan f'(x), nilai f'(x0), persamaan garis singgung di x0
+   - grafik f(x) dan garis singgungnya
+6. Validasi input dan pesan error ramah (ekspresi salah, pembagian nol, dsb).
+7. Tulis test vitest untuk derivative.js minimal 8 kasus (polinom, trigonometri,
+   ln, eksponen, aturan rantai, hasil kali, hasil bagi).
+8. Desain: mobile-first, mode gelap/terang, rapi dan konsisten.
+
+Setelah selesai: jalankan test dan build, tampilkan ringkasan file yang dibuat
+atau diubah, lalu BERHENTI. Jangan lanjut ke modul lain.
