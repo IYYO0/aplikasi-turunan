@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('kalkulab-theme');
-      if (saved) return saved === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("kalkulab-theme");
+      if (saved) return saved === "dark";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
     return false;
   });
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('kalkulab-theme', 'dark');
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("kalkulab-theme", "dark");
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('kalkulab-theme', 'light');
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("kalkulab-theme", "light");
     }
   }, [isDark]);
 
@@ -30,19 +30,21 @@ export default function Navbar() {
         {/* Brand Logo & Name */}
         <div className="flex items-center space-x-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20">
-            <span className="font-mono text-xl font-bold tracking-tighter">dx</span>
+            <span className="font-mono text-xl font-bold tracking-tighter">
+              dx
+            </span>
           </div>
           <div>
             <div className="flex items-center space-x-2">
               <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-                Kalku<span className="text-blue-600 dark:text-blue-400">Lab</span>
+                Kalkulator Turunan
               </span>
               <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-semibold text-blue-700 dark:bg-blue-950 dark:text-blue-300">
                 Kalkulus 1
               </span>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Kalkulator matematika interaktif dengan penjelasan langkah
+              Kalkulator Turunan 1 Tingkat
             </p>
           </div>
         </div>
@@ -57,7 +59,12 @@ export default function Navbar() {
           >
             {isDark ? (
               // Icon Matahari (Sun)
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -67,7 +74,12 @@ export default function Navbar() {
               </svg>
             ) : (
               // Icon Bulan (Moon)
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
